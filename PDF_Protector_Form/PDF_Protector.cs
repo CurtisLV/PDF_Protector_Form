@@ -6,8 +6,8 @@ public partial class PDF_Protector : Form
     {
         InitializeComponent();
 
-        folderPathTextBox.DragDrop += new DragEventHandler(PDF_Protector_DragDrop);
-        folderPathTextBox.DragDrop += new DragEventHandler(PDF_Protector_DragEnter);
+        this.folderPathTextBox.DragDrop += new DragEventHandler(PDF_Protector_DragDrop);
+        this.folderPathTextBox.DragEnter += new DragEventHandler(PDF_Protector_DragEnter);
 
     }
 
@@ -16,7 +16,7 @@ public partial class PDF_Protector : Form
 
     }
 
-    private void PDF_Protector_DragDrop(object sender, DragEventArgs e)
+    private void PDF_Protector_DragEnter(object sender, DragEventArgs e)
     {
         if (e.Data.GetDataPresent(DataFormats.FileDrop))
         {
@@ -28,8 +28,9 @@ public partial class PDF_Protector : Form
         } 
     }
 
-    private void PDF_Protector_DragEnter(object sender, DragEventArgs e)
+    private void PDF_Protector_DragDrop(object sender, DragEventArgs e)
     {
-        string[] s = (string[])e.Data.GetData(DataFormats.FileDrop);
+        string[] s = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+        folderPathTextBox.Text = Path.GetDirectoryName(s.First().ToString());
     }
 }

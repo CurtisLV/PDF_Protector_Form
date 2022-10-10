@@ -47,6 +47,7 @@
             // 
             // folderPathTextBox
             // 
+            this.folderPathTextBox.AllowDrop = true;
             this.folderPathTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.folderPathTextBox.Location = new System.Drawing.Point(24, 70);
             this.folderPathTextBox.MaxLength = 180;
@@ -101,8 +102,11 @@
             this.Controls.Add(this.folderPathLabel);
             this.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PDF_Protector";
             this.Text = "PDF Protector";
             this.ResumeLayout(false);
