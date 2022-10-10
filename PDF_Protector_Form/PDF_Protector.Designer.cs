@@ -32,7 +32,7 @@
             this.folderPathLabel = new System.Windows.Forms.Label();
             this.folderPathTextBox = new System.Windows.Forms.TextBox();
             this.passwordLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.clientPasswordTextBox = new System.Windows.Forms.TextBox();
             this.applyPasswordButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -47,9 +47,11 @@
             // 
             // folderPathTextBox
             // 
+            this.folderPathTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.folderPathTextBox.Location = new System.Drawing.Point(24, 70);
+            this.folderPathTextBox.MaxLength = 180;
             this.folderPathTextBox.Name = "folderPathTextBox";
-            this.folderPathTextBox.Size = new System.Drawing.Size(977, 43);
+            this.folderPathTextBox.Size = new System.Drawing.Size(818, 34);
             this.folderPathTextBox.TabIndex = 1;
             // 
             // passwordLabel
@@ -61,16 +63,23 @@
             this.passwordLabel.TabIndex = 2;
             this.passwordLabel.Text = "Client password";
             // 
-            // textBox1
+            // clientPasswordTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(24, 178);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(298, 43);
-            this.textBox1.TabIndex = 3;
+            this.clientPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.clientPasswordTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.clientPasswordTextBox.Location = new System.Drawing.Point(24, 178);
+            this.clientPasswordTextBox.MaxLength = 30;
+            this.clientPasswordTextBox.Name = "clientPasswordTextBox";
+            this.clientPasswordTextBox.Size = new System.Drawing.Size(298, 34);
+            this.clientPasswordTextBox.TabIndex = 3;
             // 
             // applyPasswordButton
             // 
-            this.applyPasswordButton.Location = new System.Drawing.Point(508, 144);
+            this.applyPasswordButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.applyPasswordButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.applyPasswordButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.applyPasswordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.applyPasswordButton.Location = new System.Drawing.Point(409, 144);
             this.applyPasswordButton.Name = "applyPasswordButton";
             this.applyPasswordButton.Size = new System.Drawing.Size(390, 77);
             this.applyPasswordButton.TabIndex = 4;
@@ -84,9 +93,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1024, 359);
+            this.ClientSize = new System.Drawing.Size(874, 255);
             this.Controls.Add(this.applyPasswordButton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.clientPasswordTextBox);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.folderPathTextBox);
             this.Controls.Add(this.folderPathLabel);
@@ -107,7 +116,7 @@
         private Label folderPathLabel;
         private TextBox folderPathTextBox;
         private Label passwordLabel;
-        private TextBox textBox1;
+        private TextBox clientPasswordTextBox;
         private Button applyPasswordButton;
     }
 }
