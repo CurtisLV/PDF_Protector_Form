@@ -37,11 +37,12 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "PDF_Protector";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.PDF_Protector_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+       
     }
 }
