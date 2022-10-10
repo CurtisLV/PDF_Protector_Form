@@ -6,5 +6,4 @@ public partial class PDF_Protector : Form
     {
         InitializeComponent();
     }
-
 }
