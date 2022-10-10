@@ -1,10 +1,11 @@
 namespace PDF_Protector_Form
 {
-    public partial class Form1 : Form
+    public partial class PDF_Protector : Form
     {
-        public Form1()
+        public PDF_Protector()
         {
             InitializeComponent();
         }
+
     }
 }
