@@ -6,4 +6,9 @@ public partial class PDF_Protector : Form
     {
         InitializeComponent();
     }
+
+    private void applyPasswordButton_Click(object sender, EventArgs e)
+    {
+
+    }
 }

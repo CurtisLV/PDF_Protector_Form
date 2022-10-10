@@ -33,6 +33,7 @@
             this.folderPathTextBox = new System.Windows.Forms.TextBox();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.applyPasswordButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // folderPathLabel
@@ -64,8 +65,18 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(24, 178);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 43);
+            this.textBox1.Size = new System.Drawing.Size(298, 43);
             this.textBox1.TabIndex = 3;
+            // 
+            // applyPasswordButton
+            // 
+            this.applyPasswordButton.Location = new System.Drawing.Point(508, 144);
+            this.applyPasswordButton.Name = "applyPasswordButton";
+            this.applyPasswordButton.Size = new System.Drawing.Size(390, 77);
+            this.applyPasswordButton.TabIndex = 4;
+            this.applyPasswordButton.Text = "Apply Password To .PDF";
+            this.applyPasswordButton.UseVisualStyleBackColor = true;
+            this.applyPasswordButton.Click += new System.EventHandler(this.applyPasswordButton_Click);
             // 
             // PDF_Protector
             // 
@@ -73,7 +84,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1024, 283);
+            this.ClientSize = new System.Drawing.Size(1024, 359);
+            this.Controls.Add(this.applyPasswordButton);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.folderPathTextBox);
@@ -96,5 +108,6 @@
         private TextBox folderPathTextBox;
         private Label passwordLabel;
         private TextBox textBox1;
+        private Button applyPasswordButton;
     }
 }
