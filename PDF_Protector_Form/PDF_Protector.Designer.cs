@@ -67,6 +67,7 @@
             // clientPasswordTextBox
             // 
             this.clientPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.clientPasswordTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.clientPasswordTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.clientPasswordTextBox.Location = new System.Drawing.Point(24, 178);
             this.clientPasswordTextBox.MaxLength = 30;
@@ -76,10 +77,11 @@
             // 
             // applyPasswordButton
             // 
-            this.applyPasswordButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.applyPasswordButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuText;
             this.applyPasswordButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.applyPasswordButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.applyPasswordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.applyPasswordButton.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.applyPasswordButton.Location = new System.Drawing.Point(409, 144);
             this.applyPasswordButton.Name = "applyPasswordButton";
             this.applyPasswordButton.Size = new System.Drawing.Size(390, 77);

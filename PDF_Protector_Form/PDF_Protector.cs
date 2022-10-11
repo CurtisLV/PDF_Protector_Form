@@ -26,8 +26,10 @@ public partial class PDF_Protector : Form
         // TODO - validate path and password (at least if !null)
         if (Directory.Exists(fullPath) && clientPasswordTextBox.Text != "")
         {
-            // filter by pdf
+            // get all .pdfs
             string[] filePaths = Directory.GetFiles(fullPath, "*.pdf");
+            int initialPDFcount = filePaths.Length;
+            int countPDFs = 0;
 
             // loop through folder in folderPath
             PdfDocument document = new PdfDocument();
@@ -35,27 +37,23 @@ public partial class PDF_Protector : Form
             foreach (string file in filePaths)
             {
                 string clientPassword = clientPasswordTextBox.Text;
-                document = PdfReader.Open(file, "");
+                // check if PDF can be opened without password, else skip the file
+                try
+                {
+                    document = PdfReader.Open(file, "");
+                }
+                catch (Exception exception)
+                {
+                    continue;
+                }
                 PdfSecuritySettings securitySettings = document.SecuritySettings;
                 securitySettings.UserPassword = clientPassword;
                 document.Save(file);
-                // count how many processed?
-                // report that process dones TODO
-                Debug.WriteLine($"PW applied to: {Path.GetFileName(file)}");
+                // count how many processed
+                countPDFs++;
             }
-
-            // if pdf - apply client password, but msgbox to confirm that this password to this folder?
-            //try
-            //{
-            //    document = PdfReader.Open(file, "invalid password");
-            //}
-            //catch (Exception exception)
-            //{
-            //    Debug.WriteLine(exception.Message);
-            //}
-            
-            
-            MessageBox.Show("Password applied to .PDFs!", "Done with PDF!", MessageBoxButtons.OK);
+            // user advised how much files in folder and how much got new password
+            MessageBox.Show($"There are {initialPDFcount} PDFs in the folder. Password applied to {countPDFs} PDFs!\nIf numbers don't match, some PDFs had password or were corrupted already before!", "Done with PDF!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
