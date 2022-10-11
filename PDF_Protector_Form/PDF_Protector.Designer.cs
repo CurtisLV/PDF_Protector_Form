@@ -121,7 +121,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "PDF_Protector";
             this.Text = "PDF Protector";
             this.TopMost = true;
