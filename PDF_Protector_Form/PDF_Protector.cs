@@ -23,7 +23,7 @@ public partial class PDF_Protector : Form
     {
         System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
         string fullPath = folderPathTextBox.Text;
-        // TODO - validate path and password (at least if !null)
+       
         if (Directory.Exists(fullPath) && clientPasswordTextBox.Text != "")
         {
             // get all .pdfs

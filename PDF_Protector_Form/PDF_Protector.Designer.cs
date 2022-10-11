@@ -86,7 +86,7 @@
             this.applyPasswordButton.Name = "applyPasswordButton";
             this.applyPasswordButton.Size = new System.Drawing.Size(390, 77);
             this.applyPasswordButton.TabIndex = 4;
-            this.applyPasswordButton.Text = "Apply Password To .PDF";
+            this.applyPasswordButton.Text = "Apply Password To PDFs";
             this.applyPasswordButton.UseVisualStyleBackColor = true;
             this.applyPasswordButton.Click += new System.EventHandler(this.applyPasswordButton_Click);
             // 
