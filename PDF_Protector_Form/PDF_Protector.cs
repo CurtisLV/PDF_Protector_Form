@@ -17,11 +17,11 @@ public partial class PDF_Protector : Form
 
         this.folderPathTextBox.DragDrop += new DragEventHandler(PDF_Protector_DragDrop);
         this.folderPathTextBox.DragEnter += new DragEventHandler(PDF_Protector_DragEnter);
-
     }
 
     private void applyPasswordButton_Click(object sender, EventArgs e)
     {
+        System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
         string fullPath = folderPathTextBox.Text;
         // TODO - validate path and password (at least if !null)
         if (Directory.Exists(fullPath) && clientPasswordTextBox.Text != "")
@@ -39,6 +39,8 @@ public partial class PDF_Protector : Form
                 PdfSecuritySettings securitySettings = document.SecuritySettings;
                 securitySettings.UserPassword = clientPassword;
                 document.Save(file);
+                // count how many processed?
+                // report that process dones TODO
                 Debug.WriteLine($"PW applied to: {Path.GetFileName(file)}");
             }
 
@@ -51,8 +53,8 @@ public partial class PDF_Protector : Form
             //{
             //    Debug.WriteLine(exception.Message);
             //}
-            // count how many processed?
-            // report that process dones
+            
+            
             MessageBox.Show("Password applied to .PDFs!", "Done with PDF!", MessageBoxButtons.OK);
         }
 
