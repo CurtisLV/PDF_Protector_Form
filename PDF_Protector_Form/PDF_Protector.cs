@@ -1,3 +1,5 @@
+using System.IO;
+
 namespace PDF_Protector_Form;
 
 public partial class PDF_Protector : Form
@@ -13,8 +15,19 @@ public partial class PDF_Protector : Form
 
     private void applyPasswordButton_Click(object sender, EventArgs e)
     {
+        string fullPath = folderPathTextBox.Text;
         // TODO - validate path and password (at least if !null)
-            // 
+        if (Directory.Exists(fullPath) && clientPasswordTextBox.Text != "")
+        {
+            string[] filePaths = Directory.GetFiles(fullPath, "*.pdf");
+            // loop through folder in folderPath
+            // filter by pdf?
+            // if pdf - apply client password, but msgbox to confirm that this password to this folder?
+            // count how many processed?
+            // report that process done
+        }
+
+
         // else msgbox
 
 
@@ -38,7 +51,7 @@ public partial class PDF_Protector : Form
         string[] s = (string[])e.Data.GetData(DataFormats.FileDrop, false);
         string fullPath = s.First().ToString();
 
-        if (Path.GetExtension(fullPath) == ".pdf")
+        if (Path.GetExtension(fullPath).ToLower() == ".pdf")
         {
             folderPathTextBox.Text = Path.GetDirectoryName(fullPath);
         } else
