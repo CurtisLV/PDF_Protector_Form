@@ -34,6 +34,7 @@
             this.passwordLabel = new System.Windows.Forms.Label();
             this.clientPasswordTextBox = new System.Windows.Forms.TextBox();
             this.applyPasswordButton = new System.Windows.Forms.Button();
+            this.miniTextLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // folderPathLabel
@@ -48,6 +49,7 @@
             // folderPathTextBox
             // 
             this.folderPathTextBox.AllowDrop = true;
+            this.folderPathTextBox.BackColor = System.Drawing.Color.White;
             this.folderPathTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.folderPathTextBox.Location = new System.Drawing.Point(24, 70);
             this.folderPathTextBox.MaxLength = 180;
@@ -90,6 +92,16 @@
             this.applyPasswordButton.UseVisualStyleBackColor = true;
             this.applyPasswordButton.Click += new System.EventHandler(this.applyPasswordButton_Click);
             // 
+            // miniTextLabel
+            // 
+            this.miniTextLabel.AutoSize = true;
+            this.miniTextLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.miniTextLabel.Location = new System.Drawing.Point(364, 44);
+            this.miniTextLabel.Name = "miniTextLabel";
+            this.miniTextLabel.Size = new System.Drawing.Size(478, 23);
+            this.miniTextLabel.TabIndex = 5;
+            this.miniTextLabel.Text = "(Drag && Drop PDF file below to get folder path automatcially)";
+            // 
             // PDF_Protector
             // 
             this.AllowDrop = true;
@@ -97,6 +109,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(874, 255);
+            this.Controls.Add(this.miniTextLabel);
             this.Controls.Add(this.applyPasswordButton);
             this.Controls.Add(this.clientPasswordTextBox);
             this.Controls.Add(this.passwordLabel);
@@ -111,6 +124,7 @@
             this.MinimizeBox = false;
             this.Name = "PDF_Protector";
             this.Text = "PDF Protector";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,5 +138,6 @@
         private Label passwordLabel;
         private TextBox clientPasswordTextBox;
         private Button applyPasswordButton;
+        private Label miniTextLabel;
     }
 }

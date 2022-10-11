@@ -54,10 +54,10 @@ public partial class PDF_Protector : Form
             }
             // user advised how much files in folder and how much got new password
             MessageBox.Show($"There are {initialPDFcount} PDFs in the folder. Password applied to {countPDFs} PDFs!\nIf numbers don't match, some PDFs had password or were corrupted already before!", "Done with PDF!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+        } // else msgbox
 
 
-        // else msgbox
+
     }
 
     private void PDF_Protector_DragEnter(object sender, DragEventArgs e)
@@ -85,4 +85,5 @@ public partial class PDF_Protector : Form
             MessageBox.Show("Draggd file is not a PDF!\nPlease drag a .pdf file!", "Drag a PDF!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
+
 }
