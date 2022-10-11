@@ -13,6 +13,11 @@ public partial class PDF_Protector : Form
 
     private void applyPasswordButton_Click(object sender, EventArgs e)
     {
+        // TODO - validate path and password (at least if !null)
+            // 
+        // else msgbox
+
+
 
     }
 
@@ -31,6 +36,16 @@ public partial class PDF_Protector : Form
     private void PDF_Protector_DragDrop(object sender, DragEventArgs e)
     {
         string[] s = (string[])e.Data.GetData(DataFormats.FileDrop, false);
-        folderPathTextBox.Text = Path.GetDirectoryName(s.First().ToString());
+        string fullPath = s.First().ToString();
+
+        if (Path.GetExtension(fullPath) == ".pdf")
+        {
+            folderPathTextBox.Text = Path.GetDirectoryName(fullPath);
+        } else
+        {
+            MessageBox.Show("Draggd file is not a PDF!\nPlease drag a .pdf file!", "Drag a PDF!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        
     }
 }
