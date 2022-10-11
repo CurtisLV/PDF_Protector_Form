@@ -1,4 +1,11 @@
+using System.Diagnostics;
 using System.IO;
+using System.Reflection.Metadata;
+using System.Reflection.PortableExecutable;
+using PdfSharp.Pdf;
+using PdfSharp.Pdf.IO;
+using PdfSharp.Pdf.Security;
+using static System.Net.WebRequestMethods;
 
 namespace PDF_Protector_Form;
 
@@ -19,19 +26,38 @@ public partial class PDF_Protector : Form
         // TODO - validate path and password (at least if !null)
         if (Directory.Exists(fullPath) && clientPasswordTextBox.Text != "")
         {
+            // filter by pdf
             string[] filePaths = Directory.GetFiles(fullPath, "*.pdf");
+
             // loop through folder in folderPath
-            // filter by pdf?
+            PdfDocument document = new PdfDocument();
+            
+            foreach (string file in filePaths)
+            {
+                string clientPassword = clientPasswordTextBox.Text;
+                document = PdfReader.Open(file, "");
+                PdfSecuritySettings securitySettings = document.SecuritySettings;
+                securitySettings.UserPassword = clientPassword;
+                document.Save(file);
+                Debug.WriteLine($"PW applied to: {Path.GetFileName(file)}");
+            }
+
             // if pdf - apply client password, but msgbox to confirm that this password to this folder?
+            //try
+            //{
+            //    document = PdfReader.Open(file, "invalid password");
+            //}
+            //catch (Exception exception)
+            //{
+            //    Debug.WriteLine(exception.Message);
+            //}
             // count how many processed?
-            // report that process done
+            // report that process dones
+            MessageBox.Show("Password applied to .PDFs!", "Done with PDF!", MessageBoxButtons.OK);
         }
 
 
         // else msgbox
-
-
-
     }
 
     private void PDF_Protector_DragEnter(object sender, DragEventArgs e)
@@ -58,7 +84,5 @@ public partial class PDF_Protector : Form
         {
             MessageBox.Show("Draggd file is not a PDF!\nPlease drag a .pdf file!", "Drag a PDF!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
-        
     }
 }

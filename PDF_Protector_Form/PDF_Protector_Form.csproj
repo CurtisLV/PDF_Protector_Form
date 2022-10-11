@@ -13,4 +13,8 @@
     <Content Include="key.ico" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="PDFsharp" Version="1.50.5147" />
+  </ItemGroup>
+
 </Project>
