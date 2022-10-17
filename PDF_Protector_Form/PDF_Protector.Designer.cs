@@ -35,6 +35,11 @@
             this.clientPasswordTextBox = new System.Windows.Forms.TextBox();
             this.applyPasswordButton = new System.Windows.Forms.Button();
             this.miniTextLabel = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.removeRadioBtn = new System.Windows.Forms.RadioButton();
+            this.addRadioBtn = new System.Windows.Forms.RadioButton();
+            this.creatorLabel = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // folderPathLabel
@@ -84,11 +89,11 @@
             this.applyPasswordButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.applyPasswordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.applyPasswordButton.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.applyPasswordButton.Location = new System.Drawing.Point(409, 144);
+            this.applyPasswordButton.Location = new System.Drawing.Point(494, 137);
             this.applyPasswordButton.Name = "applyPasswordButton";
-            this.applyPasswordButton.Size = new System.Drawing.Size(390, 77);
+            this.applyPasswordButton.Size = new System.Drawing.Size(348, 77);
             this.applyPasswordButton.TabIndex = 4;
-            this.applyPasswordButton.Text = "Apply Password To PDFs";
+            this.applyPasswordButton.Text = "Process All PDFs in Folder";
             this.applyPasswordButton.UseVisualStyleBackColor = true;
             this.applyPasswordButton.Click += new System.EventHandler(this.applyPasswordButton_Click);
             // 
@@ -102,6 +107,49 @@
             this.miniTextLabel.TabIndex = 5;
             this.miniTextLabel.Text = "(Drag && Drop PDF file below to get folder path automatcially)";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.removeRadioBtn);
+            this.panel1.Controls.Add(this.addRadioBtn);
+            this.panel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.panel1.Location = new System.Drawing.Point(354, 147);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(113, 65);
+            this.panel1.TabIndex = 6;
+            // 
+            // removeRadioBtn
+            // 
+            this.removeRadioBtn.AutoSize = true;
+            this.removeRadioBtn.Location = new System.Drawing.Point(8, 33);
+            this.removeRadioBtn.Name = "removeRadioBtn";
+            this.removeRadioBtn.Size = new System.Drawing.Size(103, 32);
+            this.removeRadioBtn.TabIndex = 1;
+            this.removeRadioBtn.Text = "Remove";
+            this.removeRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // addRadioBtn
+            // 
+            this.addRadioBtn.AutoSize = true;
+            this.addRadioBtn.Checked = true;
+            this.addRadioBtn.Location = new System.Drawing.Point(8, 3);
+            this.addRadioBtn.Name = "addRadioBtn";
+            this.addRadioBtn.Size = new System.Drawing.Size(70, 32);
+            this.addRadioBtn.TabIndex = 0;
+            this.addRadioBtn.TabStop = true;
+            this.addRadioBtn.Text = "Add";
+            this.addRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // creatorLabel
+            // 
+            this.creatorLabel.AutoSize = true;
+            this.creatorLabel.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.creatorLabel.ForeColor = System.Drawing.Color.Gainsboro;
+            this.creatorLabel.Location = new System.Drawing.Point(0, 235);
+            this.creatorLabel.Name = "creatorLabel";
+            this.creatorLabel.Size = new System.Drawing.Size(112, 17);
+            this.creatorLabel.TabIndex = 7;
+            this.creatorLabel.Text = "S3257B / SIO SCO";
+            // 
             // PDF_Protector
             // 
             this.AllowDrop = true;
@@ -109,6 +157,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(874, 255);
+            this.Controls.Add(this.creatorLabel);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.miniTextLabel);
             this.Controls.Add(this.applyPasswordButton);
             this.Controls.Add(this.clientPasswordTextBox);
@@ -124,6 +174,8 @@
             this.Name = "PDF_Protector";
             this.Text = "PDF Protector";
             this.TopMost = true;
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,5 +190,9 @@
         private TextBox clientPasswordTextBox;
         private Button applyPasswordButton;
         private Label miniTextLabel;
+        private Panel panel1;
+        private RadioButton removeRadioBtn;
+        private RadioButton addRadioBtn;
+        private Label creatorLabel;
     }
 }
