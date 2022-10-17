@@ -35,17 +35,17 @@
             this.clientPasswordTextBox = new System.Windows.Forms.TextBox();
             this.applyPasswordButton = new System.Windows.Forms.Button();
             this.miniTextLabel = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.radioBtnPanel = new System.Windows.Forms.Panel();
             this.removeRadioBtn = new System.Windows.Forms.RadioButton();
             this.addRadioBtn = new System.Windows.Forms.RadioButton();
             this.creatorLabel = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.radioBtnPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // folderPathLabel
             // 
             this.folderPathLabel.AutoSize = true;
-            this.folderPathLabel.Location = new System.Drawing.Point(24, 20);
+            this.folderPathLabel.Location = new System.Drawing.Point(21, 20);
             this.folderPathLabel.Name = "folderPathLabel";
             this.folderPathLabel.Size = new System.Drawing.Size(209, 38);
             this.folderPathLabel.TabIndex = 0;
@@ -56,7 +56,7 @@
             this.folderPathTextBox.AllowDrop = true;
             this.folderPathTextBox.BackColor = System.Drawing.Color.White;
             this.folderPathTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.folderPathTextBox.Location = new System.Drawing.Point(24, 70);
+            this.folderPathTextBox.Location = new System.Drawing.Point(21, 61);
             this.folderPathTextBox.MaxLength = 180;
             this.folderPathTextBox.Name = "folderPathTextBox";
             this.folderPathTextBox.Size = new System.Drawing.Size(818, 34);
@@ -65,7 +65,7 @@
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(24, 137);
+            this.passwordLabel.Location = new System.Drawing.Point(21, 128);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(212, 38);
             this.passwordLabel.TabIndex = 2;
@@ -76,7 +76,7 @@
             this.clientPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.clientPasswordTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.clientPasswordTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.clientPasswordTextBox.Location = new System.Drawing.Point(24, 178);
+            this.clientPasswordTextBox.Location = new System.Drawing.Point(21, 169);
             this.clientPasswordTextBox.MaxLength = 30;
             this.clientPasswordTextBox.Name = "clientPasswordTextBox";
             this.clientPasswordTextBox.Size = new System.Drawing.Size(298, 34);
@@ -89,7 +89,7 @@
             this.applyPasswordButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.applyPasswordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.applyPasswordButton.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.applyPasswordButton.Location = new System.Drawing.Point(494, 137);
+            this.applyPasswordButton.Location = new System.Drawing.Point(491, 128);
             this.applyPasswordButton.Name = "applyPasswordButton";
             this.applyPasswordButton.Size = new System.Drawing.Size(348, 77);
             this.applyPasswordButton.TabIndex = 4;
@@ -100,22 +100,22 @@
             // miniTextLabel
             // 
             this.miniTextLabel.AutoSize = true;
-            this.miniTextLabel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.miniTextLabel.Location = new System.Drawing.Point(364, 44);
+            this.miniTextLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.miniTextLabel.Location = new System.Drawing.Point(361, 35);
             this.miniTextLabel.Name = "miniTextLabel";
-            this.miniTextLabel.Size = new System.Drawing.Size(478, 23);
+            this.miniTextLabel.Size = new System.Drawing.Size(483, 23);
             this.miniTextLabel.TabIndex = 5;
             this.miniTextLabel.Text = "(Drag && Drop PDF file below to get folder path automatcially)";
             // 
-            // panel1
+            // radioBtnPanel
             // 
-            this.panel1.Controls.Add(this.removeRadioBtn);
-            this.panel1.Controls.Add(this.addRadioBtn);
-            this.panel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panel1.Location = new System.Drawing.Point(354, 147);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(113, 65);
-            this.panel1.TabIndex = 6;
+            this.radioBtnPanel.Controls.Add(this.removeRadioBtn);
+            this.radioBtnPanel.Controls.Add(this.addRadioBtn);
+            this.radioBtnPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioBtnPanel.Location = new System.Drawing.Point(351, 138);
+            this.radioBtnPanel.Name = "radioBtnPanel";
+            this.radioBtnPanel.Size = new System.Drawing.Size(113, 65);
+            this.radioBtnPanel.TabIndex = 6;
             // 
             // removeRadioBtn
             // 
@@ -144,7 +144,7 @@
             this.creatorLabel.AutoSize = true;
             this.creatorLabel.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.creatorLabel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.creatorLabel.Location = new System.Drawing.Point(0, 235);
+            this.creatorLabel.Location = new System.Drawing.Point(-1, 219);
             this.creatorLabel.Name = "creatorLabel";
             this.creatorLabel.Size = new System.Drawing.Size(112, 17);
             this.creatorLabel.TabIndex = 7;
@@ -156,9 +156,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(874, 255);
+            this.ClientSize = new System.Drawing.Size(866, 235);
             this.Controls.Add(this.creatorLabel);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.radioBtnPanel);
             this.Controls.Add(this.miniTextLabel);
             this.Controls.Add(this.applyPasswordButton);
             this.Controls.Add(this.clientPasswordTextBox);
@@ -174,8 +174,8 @@
             this.Name = "PDF_Protector";
             this.Text = "PDF Protector";
             this.TopMost = true;
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.radioBtnPanel.ResumeLayout(false);
+            this.radioBtnPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,7 +190,7 @@
         private TextBox clientPasswordTextBox;
         private Button applyPasswordButton;
         private Label miniTextLabel;
-        private Panel panel1;
+        private Panel radioBtnPanel;
         private RadioButton removeRadioBtn;
         private RadioButton addRadioBtn;
         private Label creatorLabel;

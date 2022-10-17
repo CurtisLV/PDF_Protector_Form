@@ -39,8 +39,6 @@ public partial class PDF_Protector : Form
                 openPassword = "";
                 closePassword = clientPasswordTextBox.Text;
                 passwordMsg = "applied to";
-
-
             }
             else if (removeRadioBtn.Checked)
             {
@@ -68,7 +66,7 @@ public partial class PDF_Protector : Form
                     securitySettings.UserPassword = closePassword;
                 }
                 document.Save(file);
-                // count how many processed
+                // count how many processed for comparison
                 countPDFs++;
             }
             // user advised how much files in folder and how much got new password
@@ -102,5 +100,4 @@ public partial class PDF_Protector : Form
             MessageBox.Show("Draggd file is not a PDF!\nPlease drag a .pdf file!", "Drag a PDF!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
-
 }
