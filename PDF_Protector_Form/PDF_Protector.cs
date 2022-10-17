@@ -32,16 +32,21 @@ public partial class PDF_Protector : Form
             int countPDFs = 0;
             string openPassword = "";
             string closePassword = "";
+            string passwordMsg = "";
 
             if (addRadioBtn.Checked)
             {
                 openPassword = "";
                 closePassword = clientPasswordTextBox.Text;
+                passwordMsg = "applied to";
+
+
             }
             else if (removeRadioBtn.Checked)
             {
                 openPassword = clientPasswordTextBox.Text;
                 closePassword = "";
+                passwordMsg = "removed from";
             }
 
             // loop through folder in folderPath
@@ -67,7 +72,7 @@ public partial class PDF_Protector : Form
                 countPDFs++;
             }
             // user advised how much files in folder and how much got new password
-            MessageBox.Show($"There are {initialPDFcount} PDFs in the folder. Password applied to {countPDFs} PDFs!\nIf numbers don't match, some PDFs had password or were corrupted already before!", "Done with PDFs!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"There are {initialPDFcount} PDFs in the folder. Password {passwordMsg} {countPDFs} PDFs!\nIf numbers don't match, some PDFs had (different) password or were corrupted already before!", "Done with PDFs!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         } // else do nothing
 
     }
