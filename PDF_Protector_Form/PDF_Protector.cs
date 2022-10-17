@@ -45,7 +45,6 @@ public partial class PDF_Protector : Form
             else if (removeRadioBtn.Checked)
             {
                 openPassword = clientPasswordTextBox.Text;
-                closePassword = "";
                 passwordMsg = "removed from";
             }
 
@@ -54,8 +53,6 @@ public partial class PDF_Protector : Form
             
             foreach (string file in filePaths)
             {
-           
-                // check if PDF can be opened without password, else skip the file
                 try
                 {
                     document = PdfReader.Open(file, openPassword);
@@ -65,8 +62,11 @@ public partial class PDF_Protector : Form
                     continue;
                 }
 
-                PdfSecuritySettings securitySettings = document.SecuritySettings;
-                securitySettings.UserPassword = closePassword;
+                if (addRadioBtn.Checked) // if pw to removed, no need to save even with empty password
+                {
+                    PdfSecuritySettings securitySettings = document.SecuritySettings;
+                    securitySettings.UserPassword = closePassword;
+                }
                 document.Save(file);
                 // count how many processed
                 countPDFs++;
