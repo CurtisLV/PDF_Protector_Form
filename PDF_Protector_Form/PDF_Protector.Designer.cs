@@ -89,7 +89,7 @@
             this.applyPasswordButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.applyPasswordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.applyPasswordButton.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.applyPasswordButton.Location = new System.Drawing.Point(491, 128);
+            this.applyPasswordButton.Location = new System.Drawing.Point(491, 126);
             this.applyPasswordButton.Name = "applyPasswordButton";
             this.applyPasswordButton.Size = new System.Drawing.Size(348, 77);
             this.applyPasswordButton.TabIndex = 4;
@@ -113,6 +113,7 @@
             this.radioBtnPanel.Controls.Add(this.addRadioBtn);
             this.radioBtnPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.radioBtnPanel.Location = new System.Drawing.Point(351, 138);
+            this.radioBtnPanel.Margin = new System.Windows.Forms.Padding(0);
             this.radioBtnPanel.Name = "radioBtnPanel";
             this.radioBtnPanel.Size = new System.Drawing.Size(113, 65);
             this.radioBtnPanel.TabIndex = 6;
