@@ -23,40 +23,52 @@ public partial class PDF_Protector : Form
     {
         System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
         string fullPath = folderPathTextBox.Text;
-       
+
         if (Directory.Exists(fullPath) && clientPasswordTextBox.Text != "")
         {
             // get all .pdfs
             string[] filePaths = Directory.GetFiles(fullPath, "*.pdf");
             int initialPDFcount = filePaths.Length;
             int countPDFs = 0;
+            string openPassword = "";
+            string closePassword = "";
+
+            if (addRadioBtn.Checked)
+            {
+                openPassword = "";
+                closePassword = clientPasswordTextBox.Text;
+            }
+            else if (removeRadioBtn.Checked)
+            {
+                openPassword = clientPasswordTextBox.Text;
+                closePassword = "";
+            }
 
             // loop through folder in folderPath
             PdfDocument document = new PdfDocument();
             
             foreach (string file in filePaths)
             {
-                string clientPassword = clientPasswordTextBox.Text;
+           
                 // check if PDF can be opened without password, else skip the file
                 try
                 {
-                    document = PdfReader.Open(file, "");
+                    document = PdfReader.Open(file, openPassword);
                 }
                 catch (Exception exception)
                 {
                     continue;
                 }
+
                 PdfSecuritySettings securitySettings = document.SecuritySettings;
-                securitySettings.UserPassword = clientPassword;
+                securitySettings.UserPassword = closePassword;
                 document.Save(file);
                 // count how many processed
                 countPDFs++;
             }
             // user advised how much files in folder and how much got new password
-            MessageBox.Show($"There are {initialPDFcount} PDFs in the folder. Password applied to {countPDFs} PDFs!\nIf numbers don't match, some PDFs had password or were corrupted already before!", "Done with PDF!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        } // else msgbox
-
-
+            MessageBox.Show($"There are {initialPDFcount} PDFs in the folder. Password applied to {countPDFs} PDFs!\nIf numbers don't match, some PDFs had password or were corrupted already before!", "Done with PDFs!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        } // else do nothing
 
     }
 
