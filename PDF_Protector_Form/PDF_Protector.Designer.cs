@@ -78,7 +78,7 @@
             this.clientPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.clientPasswordTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.clientPasswordTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.clientPasswordTextBox.Location = new System.Drawing.Point(19, 141);
+            this.clientPasswordTextBox.Location = new System.Drawing.Point(19, 138);
             this.clientPasswordTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.clientPasswordTextBox.MaxLength = 30;
             this.clientPasswordTextBox.Name = "clientPasswordTextBox";
@@ -92,7 +92,7 @@
             this.applyPasswordButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.applyPasswordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.applyPasswordButton.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.applyPasswordButton.Location = new System.Drawing.Point(450, 105);
+            this.applyPasswordButton.Location = new System.Drawing.Point(450, 103);
             this.applyPasswordButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.applyPasswordButton.Name = "applyPasswordButton";
             this.applyPasswordButton.Size = new System.Drawing.Size(319, 64);
@@ -103,14 +103,17 @@
             // 
             // miniTextLabel
             // 
-            this.miniTextLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.miniTextLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.miniTextLabel.AutoSize = true;
+            this.miniTextLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.miniTextLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.miniTextLabel.Location = new System.Drawing.Point(206, 23);
+            this.miniTextLabel.Location = new System.Drawing.Point(196, 19);
             this.miniTextLabel.Name = "miniTextLabel";
-            this.miniTextLabel.Size = new System.Drawing.Size(396, 19);
+            this.miniTextLabel.Padding = new System.Windows.Forms.Padding(3);
+            this.miniTextLabel.Size = new System.Drawing.Size(402, 25);
             this.miniTextLabel.TabIndex = 5;
             this.miniTextLabel.Text = "(Drag && Drop PDF file below to get folder path automatcially)";
+            this.miniTextLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // radioBtnPanel
             // 
