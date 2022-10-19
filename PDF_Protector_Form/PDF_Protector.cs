@@ -97,7 +97,7 @@ public partial class PDF_Protector : Form
             folderPathTextBox.Text = Path.GetDirectoryName(fullPath);
         } else
         {
-            MessageBox.Show("Draggd file is not a PDF!\nPlease drag a .pdf file!", "Drag a PDF!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Dragged file is not a PDF!\nPlease drag a .pdf file!", "Drag a PDF!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
