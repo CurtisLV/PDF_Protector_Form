@@ -55,6 +55,7 @@
             // 
             this.folderPathTextBox.AllowDrop = true;
             this.folderPathTextBox.BackColor = System.Drawing.Color.White;
+            this.folderPathTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.folderPathTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.folderPathTextBox.Location = new System.Drawing.Point(19, 51);
             this.folderPathTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -102,9 +103,10 @@
             // 
             // miniTextLabel
             // 
+            this.miniTextLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.miniTextLabel.AutoSize = true;
             this.miniTextLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.miniTextLabel.Location = new System.Drawing.Point(373, 30);
+            this.miniTextLabel.Location = new System.Drawing.Point(206, 23);
             this.miniTextLabel.Name = "miniTextLabel";
             this.miniTextLabel.Size = new System.Drawing.Size(396, 19);
             this.miniTextLabel.TabIndex = 5;
