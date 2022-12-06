@@ -2,9 +2,9 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection.Metadata;
 using System.Reflection.PortableExecutable;
-using PdfSharp.Pdf;
-using PdfSharp.Pdf.IO;
-using PdfSharp.Pdf.Security;
+using PdfSharpCore.Pdf;
+using PdfSharpCore.Pdf.IO;
+using PdfSharpCore.Pdf.Security;
 using static System.Net.WebRequestMethods;
 
 namespace PDF_Protector_Form;
@@ -55,7 +55,7 @@ public partial class PDF_Protector : Form
                 {
                     document = PdfReader.Open(file, openPassword);
                 }
-                catch (Exception exception)
+                catch (Exception)
                 {
                     continue;
                 }
@@ -71,7 +71,7 @@ public partial class PDF_Protector : Form
             }
             // user advised how much files in folder and how much got new password
             MessageBox.Show($"There are {initialPDFcount} PDFs in the folder. Password {passwordMsg} {countPDFs} PDFs!\nIf numbers don't match, some PDFs had (different) password or were corrupted already before!", "Done with PDFs!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        } // else do nothing
+        }
 
     }
 
