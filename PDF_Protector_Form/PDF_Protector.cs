@@ -1,11 +1,6 @@
-using System.Diagnostics;
-using System.IO;
-using System.Reflection.Metadata;
-using System.Reflection.PortableExecutable;
 using PdfSharpCore.Pdf;
 using PdfSharpCore.Pdf.IO;
 using PdfSharpCore.Pdf.Security;
-using static System.Net.WebRequestMethods;
 
 namespace PDF_Protector_Form;
 
