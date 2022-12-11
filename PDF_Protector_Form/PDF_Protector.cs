@@ -2,9 +2,9 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using PdfSharpCore.Pdf;
-using PdfSharpCore.Pdf.IO;
-using PdfSharpCore.Pdf.Security;
+using PdfSharp.Pdf;
+using PdfSharp.Pdf.IO;
+using PdfSharp.Pdf.Security;
 
 namespace PDF_Protector_Form
 {

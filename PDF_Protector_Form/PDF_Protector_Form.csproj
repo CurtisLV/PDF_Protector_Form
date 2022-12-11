@@ -13,13 +13,13 @@
 	<Content Include="key.ico" />
   </ItemGroup>
 
-  <ItemGroup>
-	<PackageReference Include="PdfSharpCore" Version="1.3.43" />
-  </ItemGroup>
-
 	<PropertyGroup>
 		<_SuppressWinFormsTrimError>true</_SuppressWinFormsTrimError>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="PdfSharp" Version="1.50.5147" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<TrimmableAssembly Include="System.Windows.Forms" />
