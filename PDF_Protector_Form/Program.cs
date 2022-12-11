@@ -1,3 +1,6 @@
+using System;
+using System.Windows.Forms;
+
 namespace PDF_Protector_Form
 {
     internal static class Program
@@ -8,7 +11,7 @@ namespace PDF_Protector_Form
         [STAThread]
         static void Main()
         {
-            ApplicationConfiguration.Initialize();
+            //ApplicationConfiguration.Initialize();
             Application.Run(new PDF_Protector());
         }
     }

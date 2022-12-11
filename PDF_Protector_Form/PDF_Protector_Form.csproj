@@ -1,20 +1,40 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWindowsForms>true</UseWindowsForms>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <ApplicationIcon>key.ico</ApplicationIcon>
+	<OutputType>WinExe</OutputType>
+	<TargetFramework>netcoreapp3.1</TargetFramework>
+	<Nullable>enable</Nullable>
+	<UseWindowsForms>true</UseWindowsForms>
+	<ImplicitUsings>false</ImplicitUsings>
+	<ApplicationIcon>key.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="key.ico" />
+	<Content Include="key.ico" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="PdfSharpCore" Version="1.3.43" />
+	<PackageReference Include="PdfSharpCore" Version="1.3.43" />
   </ItemGroup>
+
+	<PropertyGroup>
+		<_SuppressWinFormsTrimError>true</_SuppressWinFormsTrimError>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<TrimmableAssembly Include="System.Windows.Forms" />
+		<!--<TrimmableAssembly Include="System.Windows.Forms.Primitives" />-->
+	</ItemGroup>
+
+	<Target Name="ConfigureTrimming" BeforeTargets="PrepareForILLink">
+		<ItemGroup>
+			<ManagedAssemblyToLink Condition="'%(Filename)' == 'System.Windows.Forms'">
+				<IsTrimmable>true</IsTrimmable>
+			</ManagedAssemblyToLink>
+			<!--<ManagedAssemblyToLink Condition="'%(Filename)' == 'System.Windows.Forms.Primitives'">
+				<IsTrimmable>true</IsTrimmable>
+			</ManagedAssemblyToLink>-->
+		</ItemGroup>
+	</Target>
 
 </Project>

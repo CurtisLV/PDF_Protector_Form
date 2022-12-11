@@ -1,4 +1,6 @@
-﻿namespace PDF_Protector_Form
+﻿using System.Windows.Forms;
+
+namespace PDF_Protector_Form
 {
     partial class PDF_Protector
     {
